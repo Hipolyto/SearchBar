@@ -14,10 +14,14 @@ namespace SearchBarOnNavBarForms.Droid
     [Activity(Label = "SearchBarOnNavBarForms.Droid", Icon = "@drawable/icon", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
+<<<<<<< HEAD
         public Android.Support.V7.Widget.Toolbar ToolBar;
 
         public static Android.Support.V7.Widget.Toolbar ToolBar2;
 
+=======
+        public static Android.Support.V7.Widget.Toolbar ToolBar { get;  set; }     
+>>>>>>> fc31aa25a0009c8d9b4a0f2a5c3a465c60bb1649
         protected override void OnCreate(Bundle bundle)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
