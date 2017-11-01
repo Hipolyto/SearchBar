@@ -12,8 +12,7 @@ namespace SearchBarOnNavBarForms
 
         private void SearchPageSample_Clicked(object sender, System.EventArgs e)
         {
-            var page = new SearchPageSample();
-            Navigation.PushAsync(page);
+            Navigation.PushAsync(new SearchPageSample());
         }
     }
 }
