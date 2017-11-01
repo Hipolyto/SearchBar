@@ -8,7 +8,7 @@ namespace SearchBarOnNavBarForms
         {
             InitializeComponent();
 
-            MainPage = new SearchBarOnNavBarFormsPage();
+            MainPage = new NavigationPage(new SearchBarOnNavBarFormsPage());
         }
 
         protected override void OnStart()
