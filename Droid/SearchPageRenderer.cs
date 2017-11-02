@@ -23,8 +23,8 @@ namespace SearchBarOnNavBarForms.Droid
     public class SearchPageRenderer : PageRenderer
     {
         private SearchView _searchView;
-        private static Toolbar GetToolbar() =>(CrossCurrentActivity.Current?.Activity as MainActivity)?.FindViewById<Toolbar>(Resource.Id.toolbar);
-        private MainActivity _mainActivity;
+        //private static Toolbar GetToolbar() =>(CrossCurrentActivity.Current?.Activity as MainActivity)?.FindViewById<Toolbar>(Resource.Id.toolbar);
+        //private MainActivity _mainActivity;
 
         protected override void OnElementChanged(ElementChangedEventArgs<Page> e)
         {
@@ -34,7 +34,7 @@ namespace SearchBarOnNavBarForms.Droid
             {
                 return;
             }
-            _mainActivity = this.Context as MainActivity;
+
             AddSearchToToolBar();
         }
 
@@ -42,11 +42,11 @@ namespace SearchBarOnNavBarForms.Droid
         {
             if(_searchView != null)
             {
-                _searchView.QueryTextChange += _searchView_QueryTextChange;
-                _searchView.QueryTextSubmit += _searchView_QueryTextSubmit;
+                _searchView.QueryTextChange -= _searchView_QueryTextChange;
+                _searchView.QueryTextSubmit -= _searchView_QueryTextSubmit;
             }
-            _mainActivity?.ToolBar?.Menu?.RemoveItem(Resource.Menu.mainmenu);
-            MainActivity.ToolBar2?.Menu?.RemoveItem(Resource.Menu.mainmenu);
+            //_mainActivity?.ToolBar?.Menu?.RemoveItem(Resource.Menu.mainmenu);
+            MainActivity.ToolBar?.Menu?.RemoveItem(Resource.Menu.mainmenu);
             base.Dispose(disposing);
         }
 
@@ -79,15 +79,15 @@ namespace SearchBarOnNavBarForms.Droid
 
         private void AddSearchToToolBar()
         {
-            /*
-            if(MainActivity.ToolBar2 == null || Element == null)
+               
+            if(MainActivity.ToolBar == null || Element == null)
             {
                 return;
             }
-            MainActivity.ToolBar2.Title = Element.Title;
-            MainActivity.ToolBar2.InflateMenu(Resource.Menu.mainmenu);
+            MainActivity.ToolBar.Title = Element.Title;
+            MainActivity.ToolBar.InflateMenu(Resource.Menu.mainmenu);
 
-            _searchView = MainActivity.ToolBar2.Menu?.FindItem(Resource.Id.action_search)?.ActionView?.JavaCast<SearchView>();
+            _searchView = MainActivity.ToolBar.Menu?.FindItem(Resource.Id.action_search)?.ActionView?.JavaCast<SearchView>();
 
             if(_searchView == null)
             {
@@ -99,10 +99,10 @@ namespace SearchBarOnNavBarForms.Droid
             _searchView.ImeOptions = (int)ImeAction.Search;
             _searchView.InputType = (int)InputTypes.TextVariationNormal;
             _searchView.MaxWidth = int.MaxValue;
-            */
 
 
 
+            /*
             if (_mainActivity.ToolBar == null || Element == null)
             {
                 return;
@@ -122,7 +122,7 @@ namespace SearchBarOnNavBarForms.Droid
             _searchView.ImeOptions = (int)ImeAction.Search;
             _searchView.InputType = (int)InputTypes.TextVariationNormal;
             _searchView.MaxWidth = int.MaxValue;
-
+            */
         }
     }
 }

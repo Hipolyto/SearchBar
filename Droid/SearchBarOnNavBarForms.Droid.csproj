@@ -138,8 +138,10 @@
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
-    <AndroidResource Include="Resources\menu\mainmenu.axml" />
     <AndroidResource Include="Resources\menu\mainmenu.xml" />
+    <AndroidResource Include="Resources\drawable\ic_menu_white_24px.xml" />
+    <AndroidResource Include="Resources\drawable\ic_book_white_24px.xml" />
+    <AndroidResource Include="Resources\drawable\ic_search_white_24px.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\menu\" />
